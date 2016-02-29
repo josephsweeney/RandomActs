@@ -23,8 +23,8 @@ public class RandomNumbers {
 	    }
 
 	    public static void main(String[] args){
-	    	String[] initials = {"FN","AH", "SK", "AW", "HH", "ME", "ML", "JF", "JS", "SR", "SB", "LG", "NH", "SS", "SV", "CW" };
-	    	int amount = initials.length-1;
+	    	String[] initials = {"AH", "SK", "AW", "HH", "ME", "ML", "JF", "JS", "SR", "SB", "LG", "NH", "SS", "SV", "CW" };
+	    	int amount = initials.length;
 	    	int[] randomAssignments = randomNum(amount);
 	    	for (int i=0; i<randomAssignments.length; i++)
 	        {
