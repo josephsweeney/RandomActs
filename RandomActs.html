@@ -1,0 +1,192 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Random Acts of Kindness</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<!--
+This file is a modification of http://www.joshrosenbaum.org/jeopardy.html Copyright 2007 Josh Rosenbaum, Usage free for non-commercial use.
+-->
+
+<style type="text/css">
+HTML,BODY{
+  margin:0;
+  padding:0;
+  height:100%;
+  border:none
+}
+BODY, TABLE{
+  font-family: Arial;
+  color: #ffffff;
+}
+.hiddenDiv{
+  display:none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-weight:bold;
+}
+.showDiv{
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #600b3f;
+  cursor:pointer;
+  font-weight:bold;
+  font-size: 26px;
+}
+
+.questionColumn{
+  cursor:pointer;
+  border: 1px outset;
+  text-align:center;
+  font-weight:bold;
+  font-size: 30pt;
+}
+.questionColumnHighlight{
+  cursor:pointer;
+  border: 1px outset;
+  text-align: center;
+  background: #e76ee7;
+  font-weight:bold;
+  font-size: 30pt;
+}
+
+.questionColumnComplete{
+  border: 1px outset;
+  text-align:center;
+}
+</style>
+
+<script type="text/javascript">
+function _set_width(element, width, height){
+  if(element.nodeName.match(/^(table|tr|tbody|thead)$/i)){
+    var list = element.childNodes;
+    var size = list.length;
+    for(var i=0; i < size; i++){
+      list[i].style.height = height + 'px';
+      list[i].style.width = width + 'px';
+      _set_width(list[i], width, height)
+    }
+  }
+  return;
+}
+
+function showquestion(divid){
+  var div = document.getElementById(divid);
+
+  var points_field = document.getElementById(divid + '_valcol');
+  if(points_field.innerHTML == '&nbsp;'){
+    return;
+  }
+  
+
+  div.className = 'showDiv';
+
+  var height = document.body.offsetHeight;
+  var width = document.body.offsetWidth;
+
+  div.style.height = height + 'px';
+  div.style.width = width + 'px';
+
+  _set_width(div, width, height);
+  return true;
+}
+
+function hidequestion(divid){
+  var div = document.getElementById(divid);
+  div.className = 'hiddenDiv';
+
+  var points_field = document.getElementById(divid + '_valcol');
+  points_field.innerHTML = '&nbsp;';
+  points_field.className = 'questionColumnComplete';
+
+  return true;
+}
+
+function highlightCol(mytd){
+  if(mytd.innerHTML == '&nbsp;'){
+    return;
+  }
+
+  mytd.className = 'questionColumnHighlight';
+  return true;
+}
+function deHighlightCol(mytd){
+  if(mytd.innerHTML == '&nbsp;'){
+    return;
+  }
+
+  mytd.className = 'questionColumn';
+  return true;
+}
+</script>
+<table id="quiztable" class="quizTable" bgcolor="#600b3f" border="1" cellpadding="0" cellspacing="0" width="100%" height="100%">
+<tr>
+<td onclick="showquestion('0_0');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="0_0_valcol">Kristina</td>
+<td onclick="showquestion('0_1');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="0_1_valcol">Shannon</td>
+<td onclick="showquestion('0_2');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="0_2_valcol">Sienna</td>
+<td onclick="showquestion('0_3');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="0_3_valcol">Savanna</td>
+<td onclick="showquestion('0_4');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="0_4_valcol">Will</td>
+</tr>
+<tr>
+<td onclick="showquestion('1_0');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="1_0_valcol">Shane</td>
+<td onclick="showquestion('1_1');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="1_1_valcol">Tori</td>
+<td onclick="showquestion('1_2');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="1_2_valcol">Matt</td>
+<td onclick="showquestion('1_3');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="1_3_valcol">Marc</td>
+<td onclick="showquestion('1_4');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="1_4_valcol">Nick</td>
+</tr>
+<tr>
+<td onclick="showquestion('2_0');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="2_0_valcol">Levi</td>
+<td onclick="showquestion('2_1');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="2_1_valcol">Katherine</td>
+<td onclick="showquestion('2_2');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="2_2_valcol">Hannah</td>
+<td onclick="showquestion('2_3');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="2_3_valcol">Farzana</td>
+<td onclick="showquestion('2_4');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="2_4_valcol">Erika</td>
+</tr>
+<tr>
+<td onclick="showquestion('3_0');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="3_0_valcol">Carli</td>
+<td onclick="showquestion('3_1');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="3_1_valcol">Aria</td>
+<td onclick="showquestion('3_2');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="3_2_valcol">Joe F</td>
+<td onclick="showquestion('3_3');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="3_3_valcol">Amy</td>
+<td onclick="showquestion('3_4');" height="20.00%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="3_4_valcol">Joe S</td>
+</tr>
+<tr>
+<td onclick="showquestion('4_0');" height="16.67%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="4_0_valcol">Abhisek</td>
+<td onclick="showquestion('4_1');" height="16.67%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="4_1_valcol">Alisha</td>
+<td onclick="showquestion('4_2');" height="16.67%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="4_2_valcol"></td>
+<td onclick="showquestion('4_3');" height="16.67%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="4_3_valcol"></td>
+<td onclick="showquestion('4_4');" height="16.67%" width="20%" onMouseOver="highlightCol(this);" onMouseOut="deHighlightCol(this);" class="questionColumn" id="4_4_valcol"></td>
+</tr>
+</table>
+
+<table id="0_0" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Sienna</td></tr></table>
+<table id="0_1" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Amy</td></tr></table>
+<table id="0_2" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Shannon</td></tr></table>
+<table id="0_3" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Nick</td></tr></table>
+<table id="0_4" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Tori</td></tr></table>
+<table id="1_0" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Marc</td></tr></table>
+<table id="1_1" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Carli</td></tr></table>
+<table id="1_2" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Kristina</td></tr></table>
+<table id="1_3" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Alisha</td></tr></table>
+<table id="1_4" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Savanna</td></tr></table>
+<table id="2_0" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Aria</td></tr></table>
+<table id="2_1" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Levi</td></tr></table>
+<table id="2_2" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Abhisek</td></tr></table>
+<table id="2_3" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Joe S</td></tr></table>
+<table id="2_4" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Katherine</td></tr></table>
+<table id="3_0" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Will</td></tr></table>
+<table id="3_1" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Farzana</td></tr></table>
+<table id="3_2" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Erika</td></tr></table>
+<table id="3_3" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Shane</td></tr></table>
+<table id="3_4" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Hannah</td></tr></table>
+<table id="4_0" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Joe F</td></tr></table>
+<table id="4_1" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">Matt</td></tr></table>
+<table id="4_2" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">new</td></tr></table>
+<table id="4_3" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">new</td></tr></table>
+<table id="4_4" cellpadding="0" cellspacing="0" width="100%" class="hiddenDiv" onclick="hidequestion(this.id);" border="0"><tr><td valign="middle" align="center">new</td></tr></table>
+</body>
+</html>
