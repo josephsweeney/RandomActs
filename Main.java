@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 /**
- * Generates a list of n distinct, random numbers. 
+ * Generates a list of n distinct, random numbers and uses that to assign the secret person
  * @author savanna
  *
  */
@@ -17,32 +17,41 @@ public class RandomNumbers {
 	        Collections.shuffle(list);
 	        for (int i=0; i<amount; i++) {
 	            randomArray[i] = list.get(i);
-	            //I want to make sure the index is not the same as the value!
 	        }
 	        return randomArray;
 	    }
 
 	    public static void main(String[] args){
-	    	String[] initials = {"AH", "SK", "AW", "HH", "ME", "ML", "JF", "JS", "SR", "SB", "LG", "NH", "SS", "SV", "CW" };
-	    	int amount = initials.length;
+	    	String[] people = {"Kristina","Shannon", "Sienna", "Savanna", "Will", "Shane", "Tori", "Matt", "Marc", "Nick", "Levi", "Katherine", "Hannah", "Farzana", "Erika", "Carli", "Aria", "Joe F", "Amy", "Joe S", "Abhisek", "Alisha"};
+	    	int amount = people.length;
 	    	int[] randomAssignments = randomNum(amount);
+	    	boolean gotThemselves = false; 
 	    	for (int i=0; i<randomAssignments.length; i++)
 	        {
 	        	if(i == randomAssignments[i]){
 	        		System.out.println("array index equals element, run again");
+		            //I want to make sure nobody gets themselves!
+	        		gotThemselves = true;
 	        	}
 	        }
-	    	Scanner sc = new Scanner(System.in);
+	    	//For generating a list for table
+	    	if (gotThemselves == false) {
+	    			for (int i = 0; i<amount ; i++){
+	    				System.out.println("" + people[randomAssignments[i]]);
+	    			}
+	    	}
+	    	//For user input
+	    	/*Scanner sc = new Scanner(System.in);
 	    	while(true){
-	    		System.out.println("Enter your first and last initial (uppercase)");
+	    		System.out.println("Enter your name");
 	    		String inputText = sc.nextLine();
-	    		for (int i = 0; i < initials.length; i++){
-	    			if (initials[i].equals(inputText)){
+	    		for (int i = 0; i < people.length; i++){
+	    			if (people[i].equals(inputText)){
 	    				int index = randomAssignments[i];
-	    				System.out.println("Your person's initials are: " + initials[index]);
+	    				System.out.println("Your person's initials are: " + people[index]);
 	    				
 	    				}
 	    			}
-	    		}
+	    		}*/
 	    	}
 	}
